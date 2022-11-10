@@ -2415,6 +2415,7 @@ static switch_status_t load_skinny_config(void)
 
 								if (!strcasecmp(var, "firmware-version")) {
 									strncpy(params->firmware_version, val, 16);
+									params->firmware_version[15] = '\0';
 								}
 							} /* param */
 							switch_core_hash_insert(profile->device_type_params_hash, id_str, params);
